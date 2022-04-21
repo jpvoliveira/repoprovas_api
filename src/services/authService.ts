@@ -27,7 +27,7 @@ export async function signIn(userData: usersRepository.InsertUser) {
 
 export async function signUp(userData: usersRepository.InsertUser) {
   const existingUser = await usersRepository.findByEmail(userData.email)
-  if (existingUser.email)
+  if (existingUser)
     throw { type: 'Conflict', message: 'Email já cadastrado' }
   await usersRepository.insert(userData)
 }
