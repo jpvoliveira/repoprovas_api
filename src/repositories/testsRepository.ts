@@ -53,3 +53,34 @@ export async function findByTeacher() {
   })
 }
 
+export async function findByTeacherName(name:string) {
+  return prisma.teachers.findMany({
+    where: {
+      name: name
+    }
+  })
+}
+
+export async function findByTeacherDisciplines(teacherId:number) {
+  return prisma.teachersDisciplines.findMany({
+    where: {
+      teacherId: teacherId
+    }
+  })
+}
+
+export async function findByDisciplineName(disciplineName:string) {
+  return prisma.disciplines.findMany({
+    where: {
+      name: disciplineName
+    }
+  })
+}
+
+export async function findCategoryId(categoryId:number) {
+  return prisma.categories.findMany({
+    where: {
+      id: categoryId
+    }
+  })
+}
