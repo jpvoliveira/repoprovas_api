@@ -26,7 +26,16 @@ export async function insertTest(testData: InsertTest) {
 export async function findByCategory() {
   return prisma.tests.findMany({
     include:{
-      categories: true
+      categories: true,
+      teachersDisciplines: {
+        include: {
+          disciplines: {
+            include:{
+              terms: true
+            }
+          }
+        }
+      }
     }
   })
 }
@@ -34,9 +43,10 @@ export async function findByCategory() {
 export async function findByTeacher() {
   return prisma.tests.findMany({
     include:{
+      categories: true,
       teachersDisciplines: {
         include: {
-          teachers: true
+          teachers: true,
         }
       }
     }
