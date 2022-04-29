@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE "tests" ADD COLUMN     "Views" INTEGER NOT NULL DEFAULT 0;
