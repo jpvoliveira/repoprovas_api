@@ -45,7 +45,7 @@ model teachersDisciplines {
 
 model terms {
   id          Int           @id @default(autoincrement())
-  number      Int           @unique
+  number      Int            @unique
   disciplines disciplines[]
 }
 

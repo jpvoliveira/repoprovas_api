@@ -86,3 +86,22 @@ export async function findCategoryId(categoryId: number) {
     }
   })
 }
+
+export async function findById(categoryId: number) {
+  return prisma.tests.findMany({
+    where: {
+      id: categoryId
+    }
+  })
+}
+
+export async function insertView(id: number, newView: number) {
+  return prisma.tests.update({
+    where: {
+      id
+    },
+    data: {
+      views: newView
+    }
+  })
+}

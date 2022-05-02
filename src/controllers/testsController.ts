@@ -55,3 +55,8 @@ export async function findTestTeacher(req: Request, res: Response) {
   const testTeacher = await testsServices.findTestTeacher(token)
   res.send(testTeacher)
 }
+
+export async function addView(req: Request, res: Response) {
+  await testsServices.addView(req.body.id)
+  res.sendStatus(201)
+}

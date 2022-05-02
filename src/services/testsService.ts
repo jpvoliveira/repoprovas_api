@@ -56,3 +56,11 @@ export async function findCategory(categoryId: number) {
   const existingCategory = await testsRepository.findCategoryId(categoryId)
   return existingCategory
 }
+
+export async function addView(id: number) {
+  const searchViewTest = await testsRepository.findById(id)
+  const newView = searchViewTest[0].views + 1
+  const insertView = await testsRepository.insertView(id, newView)
+  console.log(insertView)
+  return insertView
+}
