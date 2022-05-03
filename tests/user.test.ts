@@ -20,9 +20,8 @@ describe('POST/signUp',()=>{
     })
     console.log(result.status)
     expect(result.status).toEqual(201)
-    // expect(user).not.toBeNull()
+    expect(user).not.toBeNull()
   })
-
 })
 
 describe('POST/signIn', ()=>{
